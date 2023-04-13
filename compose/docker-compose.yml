@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  database:
+    restart: always
+    image: 'postgres:latest'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: vmf
+      POSTGRES_PASSWORD: vmf2023
+      POSTGRES_DB: default_database
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ../db-data:/var/lib/postgresql/data
